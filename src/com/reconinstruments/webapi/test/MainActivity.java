@@ -21,6 +21,12 @@ import com.reconinstruments.webapi.ReconHttpRequest;
 import com.reconinstruments.webapi.ReconHttpResponse;
 import com.reconinstruments.webapi.ReconOSHttpClient;
 
+import com.reconinstruments.os.HUDOS;
+import com.reconinstruments.os.connectivity.HUDConnectivityManager;
+import com.reconinstruments.os.connectivity.IHUDConnectivity;
+
+System.load("/system/lib/libreconinstruments_jni.so");
+
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getSimpleName();
 
