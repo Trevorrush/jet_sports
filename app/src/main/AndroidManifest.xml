@@ -27,15 +27,25 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name=".AllTimeTickerActivity"
+            android:label="@string/title_activity_all_time_ticker" >
+        </activity>
+        <activity
+            android:name=".SelectLeagueActivity"
+            android:label="select_league_activity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".AllTimeTickerActivity"
-            android:label="@string/title_activity_all_time_ticker" >
         </activity>
     </application>
 
