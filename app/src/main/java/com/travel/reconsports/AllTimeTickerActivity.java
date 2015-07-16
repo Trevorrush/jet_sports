@@ -58,6 +58,22 @@ public class AllTimeTickerActivity extends CarouselActivity {
         Carousel_Score_Item[] myCarouseItemArray = new Carousel_Score_Item[num_of_games];
         for (int i = 0; i < gameArray.length(); i++) {
             myCarouseItemArray[i] = new Carousel_Score_Item("Hello", "Hello2");
+
+            //  Get home team title
+            try {
+
+                String current_object_string = (String)gameArray.get(0);
+
+                if (mXmlHandler == null){
+                    mXmlHandler = new xmlHandler(current_object_string);
+                    mXmlHandler.fetchXML();
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
         }
 
         return myCarouseItemArray;
@@ -85,9 +101,6 @@ public class AllTimeTickerActivity extends CarouselActivity {
             Log.d(TAG, jsonResponseValueString);
             Log.d(TAG, "number = " + getNumberOfGames());
 
-            //  Setup the xml Handler
-            mXmlHandler = new xmlHandler(jsonResponseValueString);
-            
         }
 
         if (jsonResponseValueString != null) {
@@ -96,6 +109,7 @@ public class AllTimeTickerActivity extends CarouselActivity {
 
                 // Getting JSON Array node
                 gameArray = jsonObj.getJSONArray(TAG_GAMES);
+
                 return gameArray.length();
 
             } catch (JSONException e) {

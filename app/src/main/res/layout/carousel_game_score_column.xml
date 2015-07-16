@@ -41,15 +41,6 @@
                     android:id="@+id/homeTeamLogoImageView"
                     android:src="@drawable/seattle_mariners" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
-                    android:text="-"
-                    android:layout_gravity="center_vertical"
-                    android:id="@+id/homeTeamScoreTextView" />
-
             </LinearLayout>
 
         </LinearLayout>
@@ -92,15 +83,6 @@
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/awayTeamLogoImageView"
                     android:src="@drawable/seattle_mariners" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
-                    android:text="-"
-                    android:layout_gravity="center_vertical"
-                    android:id="@+id/awayTeamScoreTextView" />
 
             </LinearLayout>
         </LinearLayout>

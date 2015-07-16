@@ -1,5 +1,7 @@
 package com.travel.xmlParser;
 
+import android.util.Log;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -56,11 +58,12 @@ public class xmlHandler {
 
                     case XmlPullParser.END_TAG:
                         if(name.equals(TICKER_ENTRY_KEY)){
-                            ticker_entry_value = text;
+                            //ticker_entry_value = text;
                         }
 
                         else if(name.equals(VISITING_TEAM_KEY)){
                             visiting_team_name_value = myParser.getAttributeValue(null,DISPLAY_NAME_KEY);
+                            Log.d("HELLO", visiting_team_name_value);
                         }
 
                         else{
@@ -78,9 +81,7 @@ public class xmlHandler {
     }
 
     public void fetchXML(){
-        Thread thread = new Thread(new Runnable(){
-            @Override
-            public void run() {
+        Log.d("HELLO",xmlString);
                 try {
 
                     xmlFactoryObject = XmlPullParserFactory.newInstance();
@@ -96,9 +97,6 @@ public class xmlHandler {
                 catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-        });
-        thread.start();
     }
 
 }
