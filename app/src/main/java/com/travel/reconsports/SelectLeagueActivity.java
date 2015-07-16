@@ -12,6 +12,12 @@ import android.view.MenuItem;
 import com.reconinstruments.ui.carousel.CarouselActivity;
 import com.reconinstruments.ui.carousel.CarouselItem;
 import com.reconinstruments.ui.carousel.StandardCarouselItem;
+import com.reconinstruments.ui.dialog.BaseDialog;
+import com.reconinstruments.ui.dialog.CarouselDialog;
+import com.reconinstruments.ui.dialog.DialogBuilder;
+import com.reconinstruments.ui.list.SimpleListActivity;
+import com.reconinstruments.ui.list.SimpleListItem;
+import com.reconinstruments.ui.list.StandardListItem;
 
 
 import org.json.JSONArray;
@@ -108,9 +114,13 @@ public class SelectLeagueActivity extends CarouselActivity  {
         super.onStart();
         //registering the IHUDConnectivity to HUDConnectivityManager
         Log.d(TAG, "START");
+        createPopupDialog();
+
 
     }
-
+    private void createPopupDialog() {
+        new DialogBuilder(this).setTitle("Select League").setDismissTimeout().createDialog().show();
+    }
     //  Helper methods for JSON parsing
     private int getNumberOfLeagues(){
         int league_list_length = 0;
