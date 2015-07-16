@@ -1,5 +1,13 @@
 package com.travel.reconsports;
 
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UnsupportedEncodingException;
+import java.io.IOException;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,6 +18,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import org.json.JSONObject;
+import org.json.JSONException;
+import org.json.JSONArray;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.lang.String;
 
 import com.reconinstruments.os.HUDOS;
 import com.reconinstruments.os.connectivity.HUDConnectivityManager;
@@ -45,9 +59,52 @@ public class MainActivity extends FragmentActivity implements IHUDConnectivity{
 
         //Get an instance of HUDConnectivityManager
         mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
-        if(mHUDConnectivityManager == null){
+        if(mHUDConnectivityManager == null) {
             Log.e(TAG, "Failed to get HUDConnectivityManager");
         }
+
+        try {
+            String object_string = loadMLBJSONFromAsset();
+            Log.d(TAG,object_string);
+            JSONObject json = new JSONObject(object_string);
+            JSONArray mlb_list = json.getJSONArray("teams");
+            System.out.println("*****JARRAY*****" + mlb_list.length());
+//            ArrayList<HashMap<String, String>> teamList = new ArrayList<HashMap<String, String>>();
+//            HashMap<String, String> m_li;
+
+            for (int i = 0; i < mlb_list.length(); i++) {
+                JSONObject mlb_team = mlb_list.getJSONObject(i);
+//                String team_name = jo_inside.getString("teamName");
+//                String team_alias = jo_inside.getString("teamAlias");
+//
+//                //Add your values in your `ArrayList` as below:
+//                m_li = new HashMap<String, String>();
+//                m_li.put("team_name", team_name);
+//                m_li.put("team_alias", team_alias);
+
+//                teamList.add(m_li);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public String loadMLBJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getResources().openRawResource(R.raw.mlb_teams);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
     }
 
     @Override
