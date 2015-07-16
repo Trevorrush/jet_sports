@@ -46,6 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener , IHU
     public void onStart(){
         super.onStart();
         //registering the IHUDConnectivity to HUDConnectivityManager
+        Log.d(TAG, "START");
         mHUDConnectivityManager.register(this);
     }
 
@@ -108,11 +109,13 @@ public class MainActivity extends Activity implements View.OnClickListener , IHU
                 HUDHttpRequest request = new HUDHttpRequest(HUDHttpRequest.RequestMethod.GET, mUrl);
                 HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
                 if (response.hasBody()) {
-                    mComment = "response bodySize:" + response.getBody().length;
+                    mComment = "response bodySize:" + response.getBodyString();
+                    Log.d(TAG, mComment);
                     result = true;
                 }
             } catch (Exception e) {
                 mComment = "failed to download file: " + e.getMessage();
+                Log.d(TAG, mComment);
                 e.printStackTrace();
                 return false;
             }
