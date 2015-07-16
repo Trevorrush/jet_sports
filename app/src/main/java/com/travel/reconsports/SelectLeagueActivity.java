@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+
+import com.reconinstruments.ui.dialog.BaseDialog;
 import com.travel.xmlParser.xmlHandler;
 /**
  * Created by trevorrush on 15-07-16.
@@ -54,18 +57,18 @@ public class SelectLeagueActivity extends CarouselActivity  {
         public int getLayoutId() {
             return R.layout.carousel_item_title_icon_column;
         }
+        public void onClick(Context context) {
+            context.startActivity(new Intent(context, MainActivity.class));
+        }
     }
 
-    private CarouselItem[] getGameEntries(){
+    private CarouselItem[] getLeagueEntries(){
         int num_of_leagues = getNumberOfLeagues();
         Log.d(TAG,"n = " + num_of_leagues);
         CarouselItem[] myCarouseItemArray = new CarouselItem[num_of_leagues];
         for (int i = 0; i < num_of_leagues; i++) {
-//            myCarouseItemArray[i] = new ImageCarouselItem("NFL", R.drawable.carousel_icon_running);
-            JSONObject current_object = null;
             String league_alias = null;
             try {
-                current_object = leagueArray.getJSONObject(i);
                 league_alias = leagueArray.getJSONObject(i).getString("leagueAlias");
 
 
@@ -75,8 +78,6 @@ public class SelectLeagueActivity extends CarouselActivity  {
 
             myCarouseItemArray[i] = new ImageCarouselItem(league_alias, getImageFromType(league_alias));
         }
-
-
         return myCarouseItemArray;
     }
 
@@ -99,7 +100,7 @@ public class SelectLeagueActivity extends CarouselActivity  {
 
     @Override
     public List<? extends CarouselItem> createContents() {
-        return Arrays.asList(getGameEntries());
+        return Arrays.asList(getLeagueEntries());
     }
 
     @Override
