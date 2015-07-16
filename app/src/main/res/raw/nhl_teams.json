@@ -1,122 +1,124 @@
 {
-	{
-        "teamName":"Anaheim Ducks",
-        "teamAlias":"ANA"
-    },
-    {
-        "teamName":"Arizona Coyotes",
-        "teamAlias":"ARI"
-    },
-    {
-        "teamName":"Boston Bruins",
-        "teamAlias":"BOS"
-    },
-    {
-        "teamName":"Buffalo Sabres",
-        "teamAlias":"BUF"
-    },
-    {
-        "teamName":"Calgary Flames",
-        "teamAlias":"CGY"
-    },
-    {
-        "teamName":"Carolina Hurricanes",
-        "teamAlias":"CAR"
-    },
-    {
-        "teamName":"Chicago Blackhawks",
-        "teamAlias":"CHI"
-    },
-    {
-        "teamName":"Colorado Avalanche",
-        "teamAlias":"COL"
-    },
-    {
-        "teamName":"Columbus Blue Jackets",
-        "teamAlias":"CLB"
-    },
-    {
-        "teamName":"Dallas Stars",
-        "teamAlias":"DAL"
-    },
-    {
-        "teamName":"Detroit Red Wings",
-        "teamAlias":"DET"
-    },
-    {
-        "teamName":"Edmonton Oilers",
-        "teamAlias":"EDM"
-    },
-    {
-        "teamName":"Florida Panthers",
-        "teamAlias":"FLA"
-    },
-    {
-        "teamName":"Los Angeles Kings",
-        "teamAlias":"LAK"
-    },
-    {
-        "teamName":"Minnesota Wild",
-        "teamAlias":"MIN"
-    },
-    {
-        "teamName":"Montreal Canadiens",
-        "teamAlias":"MTL"
-    },
-    {
-        "teamName":"Nashville Predators",
-        "teamAlias":"NSH"
-    },
-    {
-        "teamName":"New Jersey Devils",
-        "teamAlias":"NJD"
-    },
-    {
-        "teamName":"New York Islanders",
-        "teamAlias":"NYI"
-    },
-    {
-        "teamName":"New York Rangers",
-        "teamAlias":"NYR"
-    },
-    {
-        "teamName":"Ottawa Senators",
-        "teamAlias":"OTT"
-    },
-    {
-        "teamName":"Philadelphia Flyers",
-        "teamAlias":"PHI"
-    },
-    {
-        "teamName":"Pittsburgh Penguins",
-        "teamAlias":"PIT"
-    },
-    {
-        "teamName":"San Jose Sharks",
-        "teamAlias":"SJS"
-    },
-    {
-        "teamName":"St. Louis Blues",
-        "teamAlias":"STL"
-    },
-    {
-        "teamName":"Tampa Bay Lightning",
-        "teamAlias":"TB"
-    },
-    {
-        "teamName":"Toronto Maple Leafs",
-        "teamAlias":"TOR"
-    },
-    {
-        "teamName":"Vancouver Canucks",
-        "teamAlias":"VAN"
-    },
-    {
-        "teamName":"Washington Capitals",
-        "teamAlias":"WAS"
-    },
-    {
-        "teamName":"Winnipeg Jets",
-        "teamAlias":"WPG"
-    }
+    "teams": [
+    	{
+            "teamName":"Anaheim Ducks",
+            "teamAlias":"ANA"
+        },
+        {
+            "teamName":"Arizona Coyotes",
+            "teamAlias":"ARI"
+        },
+        {
+            "teamName":"Boston Bruins",
+            "teamAlias":"BOS"
+        },
+        {
+            "teamName":"Buffalo Sabres",
+            "teamAlias":"BUF"
+        },
+        {
+            "teamName":"Calgary Flames",
+            "teamAlias":"CGY"
+        },
+        {
+            "teamName":"Carolina Hurricanes",
+            "teamAlias":"CAR"
+        },
+        {
+            "teamName":"Chicago Blackhawks",
+            "teamAlias":"CHI"
+        },
+        {
+            "teamName":"Colorado Avalanche",
+            "teamAlias":"COL"
+        },
+        {
+            "teamName":"Columbus Blue Jackets",
+            "teamAlias":"CLB"
+        },
+        {
+            "teamName":"Dallas Stars",
+            "teamAlias":"DAL"
+        },
+        {
+            "teamName":"Detroit Red Wings",
+            "teamAlias":"DET"
+        },
+        {
+            "teamName":"Edmonton Oilers",
+            "teamAlias":"EDM"
+        },
+        {
+            "teamName":"Florida Panthers",
+            "teamAlias":"FLA"
+        },
+        {
+            "teamName":"Los Angeles Kings",
+            "teamAlias":"LAK"
+        },
+        {
+            "teamName":"Minnesota Wild",
+            "teamAlias":"MIN"
+        },
+        {
+            "teamName":"Montreal Canadiens",
+            "teamAlias":"MTL"
+        },
+        {
+            "teamName":"Nashville Predators",
+            "teamAlias":"NSH"
+        },
+        {
+            "teamName":"New Jersey Devils",
+            "teamAlias":"NJD"
+        },
+        {
+            "teamName":"New York Islanders",
+            "teamAlias":"NYI"
+        },
+        {
+            "teamName":"New York Rangers",
+            "teamAlias":"NYR"
+        },
+        {
+            "teamName":"Ottawa Senators",
+            "teamAlias":"OTT"
+        },
+        {
+            "teamName":"Philadelphia Flyers",
+            "teamAlias":"PHI"
+        },
+        {
+            "teamName":"Pittsburgh Penguins",
+            "teamAlias":"PIT"
+        },
+        {
+            "teamName":"San Jose Sharks",
+            "teamAlias":"SJS"
+        },
+        {
+            "teamName":"St. Louis Blues",
+            "teamAlias":"STL"
+        },
+        {
+            "teamName":"Tampa Bay Lightning",
+            "teamAlias":"TB"
+        },
+        {
+            "teamName":"Toronto Maple Leafs",
+            "teamAlias":"TOR"
+        },
+        {
+            "teamName":"Vancouver Canucks",
+            "teamAlias":"VAN"
+        },
+        {
+            "teamName":"Washington Capitals",
+            "teamAlias":"WAS"
+        },
+        {
+            "teamName":"Winnipeg Jets",
+            "teamAlias":"WPG"
+        }
+    ]
 }
