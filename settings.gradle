@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':reconUIExamples', ':reconUI'
+include ':reconSDK:sdk:libraries'
