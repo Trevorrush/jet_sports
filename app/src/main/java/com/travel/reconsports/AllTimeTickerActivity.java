@@ -12,5 +12,5 @@ public class AllTimeTickerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_time_ticker);
     }
-    
+
 }
