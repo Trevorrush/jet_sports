@@ -69,21 +69,38 @@ public class MainActivity extends FragmentActivity implements IHUDConnectivity{
             JSONObject json = new JSONObject(object_string);
             JSONArray mlb_list = json.getJSONArray("teams");
             System.out.println("*****JARRAY*****" + mlb_list.length());
-//            ArrayList<HashMap<String, String>> teamList = new ArrayList<HashMap<String, String>>();
-//            HashMap<String, String> m_li;
 
-            for (int i = 0; i < mlb_list.length(); i++) {
-                JSONObject mlb_team = mlb_list.getJSONObject(i);
-//                String team_name = jo_inside.getString("teamName");
-//                String team_alias = jo_inside.getString("teamAlias");
-//
-//                //Add your values in your `ArrayList` as below:
-//                m_li = new HashMap<String, String>();
-//                m_li.put("team_name", team_name);
-//                m_li.put("team_alias", team_alias);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-//                teamList.add(m_li);
-            }
+        try {
+            String object_string = loadNFLJSONFromAsset();
+            Log.d(TAG,object_string);
+            JSONObject json = new JSONObject(object_string);
+            JSONArray nfl_list = json.getJSONArray("teams");
+            System.out.println("*****JARRAY*****" + nfl_list.length());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        try {
+            String object_string = loadNHLJSONFromAsset();
+            Log.d(TAG,object_string);
+            JSONObject json = new JSONObject(object_string);
+            JSONArray nhl_list = json.getJSONArray("teams");
+            System.out.println("*****JARRAY*****" + nhl_list.length());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        try {
+            String object_string = loadNBAJSONFromAsset();
+            Log.d(TAG,object_string);
+            JSONObject json = new JSONObject(object_string);
+            JSONArray nba_list = json.getJSONArray("teams");
+            System.out.println("*****JARRAY*****" + nba_list.length());
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -95,6 +112,51 @@ public class MainActivity extends FragmentActivity implements IHUDConnectivity{
         String json = null;
         try {
             InputStream is = getResources().openRawResource(R.raw.mlb_teams);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+    public String loadNFLJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getResources().openRawResource(R.raw.nfl_teams);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+    public String loadNHLJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getResources().openRawResource(R.raw.nhl_teams);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+    public String loadNBAJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getResources().openRawResource(R.raw.nba_teams);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
