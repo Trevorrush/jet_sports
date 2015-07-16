@@ -68,7 +68,7 @@ public class AllTimeTickerActivity extends CarouselActivity {
                 mXmlHandler.fetchXML();
 
 
-                myCarouseItemArray[i] = new Carousel_Score_Item(mXmlHandler.getHome_team_name_value(), mXmlHandler.getVisiting_team_name_value());
+                myCarouseItemArray[i] = new Carousel_Score_Item(mXmlHandler.getHome_team_name_value(), mXmlHandler.getVisiting_team_name_value(), mXmlHandler.getHome_team_logo_value(), mXmlHandler.getVisiting_team_logo_value());
 
             } catch (JSONException e) {
                 e.printStackTrace();
