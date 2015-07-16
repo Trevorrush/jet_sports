@@ -6,4 +6,7 @@
 
     <!--Progress text-->
     <string name="fetching_score">Fetching...</string>
+    <string name="fetching_score_details">This will only take a moment  :D</string>
+
+    <string name="fetching_success">Success!</string>
 </resources>
