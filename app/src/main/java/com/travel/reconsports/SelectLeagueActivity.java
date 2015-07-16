@@ -61,10 +61,40 @@ public class SelectLeagueActivity extends CarouselActivity  {
         Log.d(TAG,"n = " + num_of_leagues);
         CarouselItem[] myCarouseItemArray = new CarouselItem[num_of_leagues];
         for (int i = 0; i < num_of_leagues; i++) {
-            myCarouseItemArray[i] = new ImageCarouselItem("NFL", R.drawable.carousel_icon_running);
+//            myCarouseItemArray[i] = new ImageCarouselItem("NFL", R.drawable.carousel_icon_running);
+            JSONObject current_object = null;
+            String league_alias = null;
+            try {
+                current_object = leagueArray.getJSONObject(i);
+                league_alias = leagueArray.getJSONObject(i).getString("leagueAlias");
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            myCarouseItemArray[i] = new ImageCarouselItem(league_alias, getImageFromType(league_alias));
         }
 
+
         return myCarouseItemArray;
+    }
+
+    public int getImageFromType(String targetType){
+        Log.d(TAG,targetType);
+        if (targetType.equals("NHL")){
+            return R.drawable.nhl;
+        }
+        else if (targetType.equals("NFL")){
+            return R.drawable.nfl;
+        }
+        else if (targetType.equals("NBA")){
+            return R.drawable.nba;
+        }
+        else if (targetType.equals("MLB")){
+            return R.drawable.mlb;
+        }
+        return R.drawable.mlb;
     }
 
     @Override
@@ -87,6 +117,7 @@ public class SelectLeagueActivity extends CarouselActivity  {
             String object_string = loadLeagueJSONFromAsset();
             Log.d(TAG,object_string);
             JSONObject json = new JSONObject(object_string);
+            leagueArray = json.getJSONArray("leagues");
             JSONArray league_list = json.getJSONArray("leagues");
             System.out.println("*****JARRAY*****" + league_list.length());
             league_list_length = league_list.length();
