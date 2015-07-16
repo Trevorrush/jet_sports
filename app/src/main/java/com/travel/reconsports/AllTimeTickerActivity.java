@@ -87,6 +87,7 @@ public class AllTimeTickerActivity extends CarouselActivity {
 
             //  Setup the xml Handler
             mXmlHandler = new xmlHandler(jsonResponseValueString);
+            
         }
 
         if (jsonResponseValueString != null) {

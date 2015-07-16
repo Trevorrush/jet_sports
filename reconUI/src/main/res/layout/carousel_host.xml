@@ -7,8 +7,9 @@
 
     <com.reconinstruments.ui.carousel.CarouselViewPager
         android:id="@+id/carousel"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         auto:animateSelection="true"
+        auto:pageMargin="80dp"
         android:gravity="center"/>
 </LinearLayout>

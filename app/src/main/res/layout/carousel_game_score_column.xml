@@ -28,12 +28,29 @@
                 android:id="@+id/homeTeamNameTextView"
                 android:layout_gravity="center_horizontal" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/homeTeamLogoImageView"
-                android:src="@drawable/seattle_mariners" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/homeTeamLogoImageView"
+                    android:src="@drawable/seattle_mariners" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:text="-"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/homeTeamScoreTextView" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -63,12 +80,29 @@
                 android:id="@+id/awayTeamNameTextView"
                 android:layout_gravity="center_horizontal" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/awayTeamLogoImageView"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/seattle_mariners" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/awayTeamLogoImageView"
+                    android:src="@drawable/seattle_mariners" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:text="-"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/awayTeamScoreTextView" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
