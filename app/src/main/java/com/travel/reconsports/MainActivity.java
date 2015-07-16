@@ -19,26 +19,26 @@ import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
 import com.reconinstruments.ui.dialog.BaseDialog;
 import com.reconinstruments.ui.dialog.DialogBuilder;
 
+import com.travel.reconsports.AllTimeTickerActivity;
+
 import java.util.ResourceBundle;
 
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener, IHUDConnectivity{
+public class MainActivity extends FragmentActivity implements IHUDConnectivity{
 
     private static final String TAG = "mainActivity";
-    private Button downloadButton;
     private BaseDialog progressDialog;
 
     private HUDConnectivityManager mHUDConnectivityManager = null;
-    private String urlString = "http://scores.nbcsports.msnbc.com/ticker/data/gamesMSNBC.js.asp?json=true&sport=MLB&period=20150718";
+    private String urlString = "http://scores.nbcsports.msnbc.com/ticker/data/gamesMSNBC.js.asp?json=true&sport=MLB&period=20150717";
+    private String jsonResponseKeyString = "JsonResponseKey";
+    private String jsonResponseBodyString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //  Setup button
-        downloadButton = (Button) findViewById(R.id.tempDownloadButton) ;
-        downloadButton.setOnClickListener(this);
 
         //Note: This following line is necessary for HUDConnectivityManager to run properly
         System.load("/system/lib/libreconinstruments_jni.so");
@@ -73,29 +73,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         //unregistering the IHUDConnectivity from HUDConnectivityManager
         mHUDConnectivityManager.unregister(this);
         super.onStop();
-    }
-
-    @Override
-    public void onClick(View v) {
-        Intent intent = null;
-
-        if (v == downloadButton) {
-//            Log.d(TAG,"ME!");
-//            String fetching_string = getResources().getString(R.string.fetching_score);
-//            String fetching_details_string = getResources().getString(R.string.fetching_score_details);
-//            //  Show the fetching state
-//            DialogBuilder progress_builder = new DialogBuilder(this);
-//            progress_builder.setTitle(fetching_string);
-//            progress_builder.setSubtitle(fetching_details_string);
-//            progress_builder.showProgress();
-//
-//
-//            progressDialog = progress_builder.createDialog();
-//            progressDialog.show();
-//
-//            //  Start the download logic
-//            new DownloadFileTask(urlString).execute();
-        }
     }
 
     @Override
@@ -143,8 +120,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 HUDHttpRequest request = new HUDHttpRequest(HUDHttpRequest.RequestMethod.GET, mUrl);
                 HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
                 if (response.hasBody()) {
-                    mComment = "response bodySize:" + response.getBodyString();
-                    Log.d(TAG, mComment);
+                    jsonResponseBodyString = response.getBodyString();
                     result = true;
                 }
             } catch (Exception e) {
@@ -159,7 +135,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         @Override
         protected void onPostExecute(Boolean result) {
             if(result){
-
                 //  Update success icon
                 ImageView icon = (ImageView)progressDialog.getView().findViewById(R.id.icon);
                 icon.setImageResource(R.drawable.icon_checkmark);
@@ -173,9 +148,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 progressDialog.getView().findViewById(R.id.subtitle).setVisibility(View.GONE);
 
                 progressDialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
-                progressDialog.setDismissTimeout(3);
+                progressDialog.dismiss();
 
-                Log.d(TAG,"Good");
+                showAllTimeTicker();
+
             }else {
 
                 progressDialog.dismiss();
@@ -236,5 +212,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         progressDialog = progress_builder.createDialog();
         progressDialog.show();
 
+    }
+
+    private void showAllTimeTicker(){
+        Intent intent = new Intent(this, AllTimeTickerActivity.class);
+
+        //  push the response body string to next activity
+        intent.putExtra(jsonResponseKeyString,jsonResponseBodyString);
+        startActivity(intent);
     }
 }
