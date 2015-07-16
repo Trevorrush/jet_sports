@@ -1,0 +1,118 @@
+{
+	{
+        "teamName":"Baltimore Orioles",
+        "teamAlias":"BAL"
+    },
+    {
+        "teamName":"Boston Red Sox",
+        "teamAlias":"BOS"
+    },
+    {
+        "teamName":"New York Yankees",
+        "teamAlias":"NYY"
+    },
+    {
+        "teamName":"Tampa Bay Rays",
+        "teamAlias":"TB"
+    },
+    {
+        "teamName":"Toronto Blue Jays",
+        "teamAlias":"TOR"
+    },
+    {
+        "teamName":"Chicago White Sox",
+        "teamAlias":"CHI"
+    },
+    {
+        "teamName":"Cleveland Indians",
+        "teamAlias":"CLE"
+    },
+    {
+        "teamName":"Kansas City Royals",
+        "teamAlias":"KC"
+    },
+    {
+        "teamName":"Minnesota Twins",
+        "teamAlias":"MIN"
+    },
+    {
+        "teamName":"Houston Astros",
+        "teamAlias":"HOU"
+    },
+    {
+        "teamName":"Los Angeles Angels",
+        "teamAlias":"LAA"
+    },
+    {
+        "teamName":"Oakland Athletics",
+        "teamAlias":"OAK"
+    },
+    {
+        "teamName":"Seattle Mariners",
+        "teamAlias":"SEA"
+    },
+    {
+        "teamName":"Texas Rangers",
+        "teamAlias":"TEX"
+    },
+    {
+        "teamName":"Atlanta Braves",
+        "teamAlias":"ATL"
+    },
+    {
+        "teamName":"Miami Marlins",
+        "teamAlias":"MIA"
+    },
+    {
+        "teamName":"New York Mets",
+        "teamAlias":"NYM"
+    },
+    {
+        "teamName":"Philadelphia Phillies",
+        "teamAlias":"PHI"
+    },
+    {
+        "teamName":"Washington Nationals",
+        "teamAlias":"WAS"
+    },
+    {
+        "teamName":"Chicago Cubs",
+        "teamAlias":"CHI"
+    },
+    {
+        "teamName":"Cincinnati Reds",
+        "teamAlias":"CIN"
+    },
+    {
+        "teamName":"Milwaukee Brewers",
+        "teamAlias":"MIL"
+    },
+    {
+        "teamName":"Pittsburgh Pirates",
+        "teamAlias":"PIT"
+    },
+    {
+        "teamName":"St. Louis Cardinals",
+        "teamAlias":"STL"
+    },
+    {
+        "teamName":"Arizona Diamondbacks",
+        "teamAlias":"ARI"
+    },
+    {
+        "teamName":"Colorado Rockies",
+        "teamAlias":"COL"
+    },
+    {
+        "teamName":"Los Angeles Dodgers",
+        "teamAlias":"LAD"
+    },
+    {
+        "teamName":"San Diego Padres",
+        "teamAlias":"SD"
+    },
+    {
+        "teamName":"San Francisco Giants",
+        "teamAlias":"SF"
+    }
+}

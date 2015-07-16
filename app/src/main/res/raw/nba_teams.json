@@ -1,0 +1,118 @@
+{
+	{
+        "teamName":"Boston Celtics",
+        "teamAlias":"BOS"
+    },
+    {
+        "teamName":"Brooklyn Nets",
+        "teamAlias":"BKN"
+    },
+    {
+        "teamName":"New York Knicks",
+        "teamAlias":"NY"
+    },
+    {
+        "teamName":"Philadelphia 76ers",
+        "teamAlias":"PHI"
+    },
+    {
+        "teamName":"Toronto Raptors",
+        "teamAlias":"TOR"
+    },
+    {
+        "teamName":"Chicago Bulls",
+        "teamAlias":"CHI"
+    },
+    {
+        "teamName":"Cleveland Cavaliers",
+        "teamAlias":"CLE"
+    },
+    {
+        "teamName":"Detroit Pistons",
+        "teamAlias":"DET"
+    },
+    {
+        "teamName":"Indiana Pacers",
+        "teamAlias":"IND"
+    },
+    {
+        "teamName":"Atlanta Hawks",
+        "teamAlias":"ATL"
+    },
+    {
+        "teamName":"Charlotte Hornets",
+        "teamAlias":"CHA"
+    },
+    {
+        "teamName":"Miami Heat",
+        "teamAlias":"MIA"
+    },
+    {
+        "teamName":"Orlando Magic",
+        "teamAlias":"ORL"
+    },
+    {
+        "teamName":"Washington Wizards",
+        "teamAlias":"WAS"
+    },
+    {
+        "teamName":"Dallas Mavericks",
+        "teamAlias":"DAL"
+    },
+    {
+        "teamName":"Houston Rockets",
+        "teamAlias":"HOU"
+    },
+    {
+        "teamName":"Memphis Grizzlies",
+        "teamAlias":"MEM"
+    },
+    {
+        "teamName":"New Orleans Pelicans",
+        "teamAlias":"NO"
+    },
+    {
+        "teamName":"San Antonio Spurs",
+        "teamAlias":"SA"
+    },
+    {
+        "teamName":"Denver Nuggets",
+        "teamAlias":"DEN"
+    },
+    {
+        "teamName":"Minnesota Timberwolves",
+        "teamAlias":"MIN"
+    },
+    {
+        "teamName":"Portland Trail Blazers",
+        "teamAlias":"POR"
+    },
+    {
+        "teamName":"Oklahoma City Thunder",
+        "teamAlias":"OKC"
+    },
+    {
+        "teamName":"Utah Jazz",
+        "teamAlias":"UTA"
+    },
+    {
+        "teamName":"Golden State Warriors",
+        "teamAlias":"GS"
+    },
+    {
+        "teamName":"Los Angeles Clippers",
+        "teamAlias":"LAC"
+    },
+    {
+        "teamName":"Los Angeles Lakers",
+        "teamAlias":"LAL"
+    },
+    {
+        "teamName":"Phoenix Suns",
+        "teamAlias":"PHO"
+    },
+    {
+        "teamName":"Sacramento Kings",
+        "teamAlias":"SAC"
+    }
+}

@@ -1,0 +1,19 @@
+{
+	{
+        "leagueName":"National Hockey League",
+        "leagueAlias":"NHL"
+    },
+    {
+        "leagueName":"National Football League",
+        "leagueAlias":"NFL"
+    },
+    {
+        "leagueName":"Major League Baseball",
+        "leagueAlias":"MLB"
+    },
+    {
+        "leagueName":"National Baseball Association",
+        "leagueAlias":"NBA"
+    }
+    
+}
