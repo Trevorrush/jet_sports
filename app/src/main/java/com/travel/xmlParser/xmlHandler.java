@@ -16,7 +16,8 @@ public class xmlHandler {
     private String TICKER_ENTRY_KEY = "ticker-entry";
     private String VISITING_TEAM_KEY = "visiting-team";
     private String HOME_TEAM_KEY = "home-team";
-    private String DISPLAY_NAME_KEY = "display_name";
+    private String DISPLAY_NAME_KEY = "displayname";
+    private String NICK_NAME_KEY = "nickname";
     private String SCORE_KEY = "score";
     private XmlPullParserFactory xmlFactoryObject;
     public volatile boolean parsingComplete = true;
@@ -24,6 +25,7 @@ public class xmlHandler {
 
     private String ticker_entry_value;
     private String visiting_team_name_value;
+    private String home_team_name_value;
 
     public xmlHandler(String source_xml_String){
         //  Setup the xmlString
@@ -38,6 +40,10 @@ public class xmlHandler {
         return visiting_team_name_value;
     }
 
+    public String getHome_team_name_value(){
+        return home_team_name_value;
+    }
+
     public void parseXMLAndStoreIt(XmlPullParser myParser) {
         int event;
         String text=null;
@@ -50,20 +56,23 @@ public class xmlHandler {
 
                 switch (event){
                     case XmlPullParser.START_TAG:
+                        if(name.equals(VISITING_TEAM_KEY)) {
+                            visiting_team_name_value = myParser.getAttributeValue(null, NICK_NAME_KEY);
+                            Log.d("HELLO", visiting_team_name_value);
+                        }
+
+                        if (name.equals(HOME_TEAM_KEY)){
+                            home_team_name_value = myParser.getAttributeValue(null, NICK_NAME_KEY);
+                            Log.d("Hello", home_team_name_value);
+                        }
                         break;
 
                     case XmlPullParser.TEXT:
-                        text = myParser.getText();
                         break;
 
                     case XmlPullParser.END_TAG:
                         if(name.equals(TICKER_ENTRY_KEY)){
                             //ticker_entry_value = text;
-                        }
-
-                        else if(name.equals(VISITING_TEAM_KEY)){
-                            visiting_team_name_value = myParser.getAttributeValue(null,DISPLAY_NAME_KEY);
-                            Log.d("HELLO", visiting_team_name_value);
                         }
 
                         else{

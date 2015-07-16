@@ -57,17 +57,18 @@ public class AllTimeTickerActivity extends CarouselActivity {
         int num_of_games = getNumberOfGames();
         Carousel_Score_Item[] myCarouseItemArray = new Carousel_Score_Item[num_of_games];
         for (int i = 0; i < gameArray.length(); i++) {
-            myCarouseItemArray[i] = new Carousel_Score_Item("Hello", "Hello2");
 
             //  Get home team title
             try {
 
-                String current_object_string = (String)gameArray.get(0);
+                String current_object_string = (String)gameArray.get(i);
 
-                if (mXmlHandler == null){
-                    mXmlHandler = new xmlHandler(current_object_string);
-                    mXmlHandler.fetchXML();
-                }
+                mXmlHandler = null;
+                mXmlHandler = new xmlHandler(current_object_string);
+                mXmlHandler.fetchXML();
+
+
+                myCarouseItemArray[i] = new Carousel_Score_Item(mXmlHandler.getHome_team_name_value(), mXmlHandler.getVisiting_team_name_value());
 
             } catch (JSONException e) {
                 e.printStackTrace();
