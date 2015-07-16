@@ -18,6 +18,7 @@ public class xmlHandler {
     private String HOME_TEAM_KEY = "home-team";
     private String DISPLAY_NAME_KEY = "displayname";
     private String NICK_NAME_KEY = "nickname";
+    private String GZ_IMAGE_KEY = "gz-image";
     private String SCORE_KEY = "score";
     private XmlPullParserFactory xmlFactoryObject;
     public volatile boolean parsingComplete = true;
@@ -26,6 +27,8 @@ public class xmlHandler {
     private String ticker_entry_value;
     private String visiting_team_name_value;
     private String home_team_name_value;
+    private String visiting_team_logo_value;
+    private String home_team_logo_value;
 
     public xmlHandler(String source_xml_String){
         //  Setup the xmlString
@@ -44,6 +47,13 @@ public class xmlHandler {
         return home_team_name_value;
     }
 
+    public String getVisiting_team_logo_value(){
+        return visiting_team_logo_value;
+    }
+
+    public String getHome_team_logo_value(){
+        return home_team_logo_value;
+    }
     public void parseXMLAndStoreIt(XmlPullParser myParser) {
         int event;
         String text=null;
@@ -61,10 +71,22 @@ public class xmlHandler {
                             Log.d("HELLO", visiting_team_name_value);
                         }
 
-                        if (name.equals(HOME_TEAM_KEY)){
+                        if (name.equals("team-logo")){
+                            String team_logo_value = myParser.getAttributeValue(null, GZ_IMAGE_KEY);
+                            if (team_logo_value.toLowerCase().contains(visiting_team_name_value.toLowerCase())){
+                                visiting_team_logo_value = team_logo_value;
+                            }else{
+                                home_team_logo_value = team_logo_value;
+                            }
+                            Log.d("HELLO", visiting_team_logo_value);
+                        }
+
+                        else if (name.equals(HOME_TEAM_KEY)){
                             home_team_name_value = myParser.getAttributeValue(null, NICK_NAME_KEY);
                             Log.d("Hello", home_team_name_value);
                         }
+
+
                         break;
 
                     case XmlPullParser.TEXT:
