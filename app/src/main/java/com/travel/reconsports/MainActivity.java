@@ -1,21 +1,29 @@
 package com.travel.reconsports;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.LightingColorFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.reconinstruments.os.HUDOS;
 import com.reconinstruments.os.connectivity.HUDConnectivityManager;
 import com.reconinstruments.os.connectivity.IHUDConnectivity;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
+import com.reconinstruments.ui.dialog.BaseDialog;
+import com.reconinstruments.ui.dialog.DialogBuilder;
+import android.support.v4.app.FragmentActivity;
 
-public class MainActivity extends Activity implements View.OnClickListener , IHUDConnectivity{
+import java.util.Arrays;
+import java.util.List;
+
+public class MainActivity extends FragmentActivity implements View.OnClickListener, IHUDConnectivity{
 
     private static final String TAG = "mainActivity";
     private Button downloadButton;
@@ -43,11 +51,27 @@ public class MainActivity extends Activity implements View.OnClickListener , IHU
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
         //registering the IHUDConnectivity to HUDConnectivityManager
         Log.d(TAG, "START");
         mHUDConnectivityManager.register(this);
+
+        //  Show the fetching state
+        new DialogBuilder(this).setTitle("Loading").setSubtitle("(press select to finish)").showProgress().setOnKeyListener(new BaseDialog.OnKeyListener() {
+            @Override
+            public boolean onKey(BaseDialog dialog, int keyCode, KeyEvent event) {
+                if (event.getAction()==KeyEvent.ACTION_UP&&keyCode==KeyEvent.KEYCODE_DPAD_CENTER) {
+                    ImageView icon = (ImageView)dialog.getView().findViewById(R.id.icon);
+                    icon.setImageResource(R.drawable.icon_checkmark);
+                    icon.setVisibility(View.VISIBLE);
+                    dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
+                    dialog.setDismissTimeout(2);
+                    return true;
+                }
+                return false;
+            }
+        }).createDialog().show();
     }
 
     @Override

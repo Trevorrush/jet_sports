@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!--Progress text-->
+    <string name="fetching_score">Fetching...</string>
 </resources>
