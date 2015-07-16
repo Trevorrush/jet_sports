@@ -1,6 +1,5 @@
 package com.travel.reconsports;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.reconinstruments.os.HUDOS;
 import com.reconinstruments.os.connectivity.HUDConnectivityManager;
@@ -18,7 +18,6 @@ import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
 import com.reconinstruments.ui.dialog.BaseDialog;
 import com.reconinstruments.ui.dialog.DialogBuilder;
-import android.widget.TextView;
 
 import java.util.ResourceBundle;
 
@@ -101,11 +100,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onConnectionStateChanged(ConnectionState state) {
-        Log.d(TAG, "onConnectionStateChanged : state:" + state);
-        switch (state) {
-            default:
-                Log.e(TAG,"onConnectionStateChanged() with unknown state:" + state);
-                break;
+        if (state != null){
+            Log.d(TAG, "onConnectionStateChanged : state:" + state);
+            switch (state) {
+                default:
+                    Log.e(TAG,"onConnectionStateChanged() with unknown state:" + state);
+                    break;
+            }
         }
     }
 
