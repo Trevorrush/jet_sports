@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
 import com.reconinstruments.ui.dialog.BaseDialog;
 import com.reconinstruments.ui.dialog.DialogBuilder;
 
+import java.util.ResourceBundle;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener, IHUDConnectivity{
@@ -54,11 +56,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         //registering the IHUDConnectivity to HUDConnectivityManager
         Log.d(TAG, "START");
         mHUDConnectivityManager.register(this);
+
+        //  Start downloading events
+        showNonDismissalProgress();
+        new DownloadFileTask(urlString).execute();
     }
 
     @Override
     public void onResume() {
         super.onResume();
+
     }
 
     @Override
@@ -73,21 +80,21 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         Intent intent = null;
 
         if (v == downloadButton) {
-            Log.d(TAG,"ME!");
-            String fetching_string = getResources().getString(R.string.fetching_score);
-            String fetching_details_string = getResources().getString(R.string.fetching_score_details);
-            //  Show the fetching state
-            DialogBuilder progress_builder = new DialogBuilder(this);
-            progress_builder.setTitle(fetching_string);
-            progress_builder.setSubtitle(fetching_details_string);
-            progress_builder.showProgress();
-
-
-            progressDialog = progress_builder.createDialog();
-            progressDialog.show();
-
-            //  Start the download logic
-            new DownloadFileTask(urlString).execute();
+//            Log.d(TAG,"ME!");
+//            String fetching_string = getResources().getString(R.string.fetching_score);
+//            String fetching_details_string = getResources().getString(R.string.fetching_score_details);
+//            //  Show the fetching state
+//            DialogBuilder progress_builder = new DialogBuilder(this);
+//            progress_builder.setTitle(fetching_string);
+//            progress_builder.setSubtitle(fetching_details_string);
+//            progress_builder.showProgress();
+//
+//
+//            progressDialog = progress_builder.createDialog();
+//            progressDialog.show();
+//
+//            //  Start the download logic
+//            new DownloadFileTask(urlString).execute();
         }
     }
 
@@ -171,8 +178,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 Log.d(TAG,"Good");
             }else {
 
+                progressDialog.dismiss();
 
-
+                showRetryProgress();
 
                 Log.d(TAG,"Bad");
             }
@@ -188,20 +196,45 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         DialogBuilder progress_builder = new DialogBuilder(this);
         progress_builder.setTitle(fetching_string);
         progress_builder.setSubtitle(fetching_details_string);
-        progress_builder.showProgress();
 
+        progress_builder.showProgress();
 
         progressDialog = progress_builder.createDialog();
         progressDialog.show();
-
-        //  Start the download logic
-        new DownloadFileTask(urlString).execute();
 
     }
 
     private void showRetryProgress(){
 
+        String fetching_failed_string = getResources().getString(R.string.fetching_failed);
+        String fetching_failed_details_string = getResources().getString(R.string.fetching_failed_details);
 
+        //  Show the fetching failed state
+        DialogBuilder progress_builder = new DialogBuilder(this);
+        progress_builder.setTitle(fetching_failed_string);
+        progress_builder.setSubtitle(fetching_failed_details_string);
+
+        progress_builder.setIcon(R.drawable.icon_warning);
+
+        //  Add onclick handler
+        progress_builder.setOnKeyListener(new BaseDialog.OnKeyListener() {
+            @Override
+            public boolean onKey(BaseDialog dialog, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+                    dialog.dismiss();
+                    showNonDismissalProgress();
+
+                    new DownloadFileTask(urlString).execute();
+
+                    return true;
+
+                }
+                return false;
+            }
+        });
+
+        progressDialog = progress_builder.createDialog();
+        progressDialog.show();
 
     }
 }

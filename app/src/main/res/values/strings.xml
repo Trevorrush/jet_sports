@@ -9,4 +9,7 @@
     <string name="fetching_score_details">This will only take a moment  :D</string>
 
     <string name="fetching_success">Success!</string>
+    <string name="fetching_failed">Fetching Failed!</string>
+    <string name="fetching_failed_details">(Tap Select to retry)</string>
+    <string name="title_activity_all_time_ticker">AllTimeTicker</string>
 </resources>
