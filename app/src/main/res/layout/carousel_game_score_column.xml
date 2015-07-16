@@ -39,8 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/homeTeamLogoImageView"
-                    android:src="@drawable/seattle_mariners" />
+                    android:id="@+id/homeTeamLogoImageView" />
 
             </LinearLayout>
 
@@ -83,8 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/awayTeamLogoImageView"
-                    android:src="@drawable/seattle_mariners" />
+                    android:id="@+id/awayTeamLogoImageView" />
 
             </LinearLayout>
         </LinearLayout>
