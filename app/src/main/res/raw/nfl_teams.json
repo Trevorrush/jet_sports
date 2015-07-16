@@ -1,130 +1,132 @@
 {
-	{
-        "teamName":"Buffalo Bills",
-        "teamAlias":"BUF"
-    },
-    {
-        "teamName":"Miami Dolphins",
-        "teamAlias":"MIA"
-    },
-    {
-        "teamName":"New England Patriots",
-        "teamAlias":"NE"
-    },
-    {
-        "teamName":"New York Jets",
-        "teamAlias":"NYJ"
-    },
-    {
-        "teamName":"Baltimore Ravens",
-        "teamAlias":"BAL"
-    },
-    {
-        "teamName":"Cincinnati Bengals",
-        "teamAlias":"CIN"
-    },
-    {
-        "teamName":"Clevland Browns",
-        "teamAlias":"CLE"
-    },
-    {
-        "teamName":"Pittsburgh Steelers",
-        "teamAlias":"PIT"
-    },
-    {
-        "teamName":"Houston Texans",
-        "teamAlias":"HOU"
-    },
-    {
-        "teamName":"Indianapolis Colts",
-        "teamAlias":"IND"
-    },
-    {
-        "teamName":"Jacksonville Jaguars",
-        "teamAlias":"JAC"
-    },
-    {
-        "teamName":"Tennessee Titans",
-        "teamAlias":"TEN"
-    },
-    {
-        "teamName":"Denver Broncos",
-        "teamAlias":"DEN"
-    },
-    {
-        "teamName":"Kansas City Chiefs",
-        "teamAlias":"KC"
-    },
-    {
-        "teamName":"Oakland Raiders",
-        "teamAlias":"OAK"
-    },
-    {
-        "teamName":"San Diego Chargers",
-        "teamAlias":"SD"
-    },
-    {
-        "teamName":"Dallas Cowboys",
-        "teamAlias":"DAL"
-    },
-    {
-        "teamName":"New York Giants",
-        "teamAlias":"NYG"
-    },
-    {
-        "teamName":"Philadelphia Eagles",
-        "teamAlias":"PHI"
-    },
-    {
-        "teamName":"Washington Redskins",
-        "teamAlias":"WAS"
-    },
-    {
-        "teamName":"Chicago Bears",
-        "teamAlias":"CHI"
-    },
-    {
-        "teamName":"Detroit Lions",
-        "teamAlias":"DET"
-    },
-    {
-        "teamName":"Green Bay Packers",
-        "teamAlias":"GB"
-    },
-    {
-        "teamName":"Minnesota Vikings",
-        "teamAlias":"MIN"
-    },
-    {
-        "teamName":"Atlanta Falcons",
-        "teamAlias":"ATL"
-    },
-    {
-        "teamName":"Carolina Panthers",
-        "teamAlias":"CAR"
-    },
-    {
-        "teamName":"New Orleans Saints",
-        "teamAlias":"NO"
-    },
-    {
-        "teamName":"Tampa Bay Buccaneers",
-        "teamAlias":"TB"
-    },
-    {
-        "teamName":"Arizona Cardinals",
-        "teamAlias":"ARI"
-    },
-    {
-        "teamName":"St. Louis Rams",
-        "teamAlias":"STL"
-    },
-    {
-        "teamName":"San Francisco 49ers",
-        "teamAlias":"SF"
-    },
-    {
-        "teamName":"Seattle Seahawks",
-        "teamAlias":"SEA"
-    }
+    "teams": [
+    	{
+            "teamName":"Buffalo Bills",
+            "teamAlias":"BUF"
+        },
+        {
+            "teamName":"Miami Dolphins",
+            "teamAlias":"MIA"
+        },
+        {
+            "teamName":"New England Patriots",
+            "teamAlias":"NE"
+        },
+        {
+            "teamName":"New York Jets",
+            "teamAlias":"NYJ"
+        },
+        {
+            "teamName":"Baltimore Ravens",
+            "teamAlias":"BAL"
+        },
+        {
+            "teamName":"Cincinnati Bengals",
+            "teamAlias":"CIN"
+        },
+        {
+            "teamName":"Clevland Browns",
+            "teamAlias":"CLE"
+        },
+        {
+            "teamName":"Pittsburgh Steelers",
+            "teamAlias":"PIT"
+        },
+        {
+            "teamName":"Houston Texans",
+            "teamAlias":"HOU"
+        },
+        {
+            "teamName":"Indianapolis Colts",
+            "teamAlias":"IND"
+        },
+        {
+            "teamName":"Jacksonville Jaguars",
+            "teamAlias":"JAC"
+        },
+        {
+            "teamName":"Tennessee Titans",
+            "teamAlias":"TEN"
+        },
+        {
+            "teamName":"Denver Broncos",
+            "teamAlias":"DEN"
+        },
+        {
+            "teamName":"Kansas City Chiefs",
+            "teamAlias":"KC"
+        },
+        {
+            "teamName":"Oakland Raiders",
+            "teamAlias":"OAK"
+        },
+        {
+            "teamName":"San Diego Chargers",
+            "teamAlias":"SD"
+        },
+        {
+            "teamName":"Dallas Cowboys",
+            "teamAlias":"DAL"
+        },
+        {
+            "teamName":"New York Giants",
+            "teamAlias":"NYG"
+        },
+        {
+            "teamName":"Philadelphia Eagles",
+            "teamAlias":"PHI"
+        },
+        {
+            "teamName":"Washington Redskins",
+            "teamAlias":"WAS"
+        },
+        {
+            "teamName":"Chicago Bears",
+            "teamAlias":"CHI"
+        },
+        {
+            "teamName":"Detroit Lions",
+            "teamAlias":"DET"
+        },
+        {
+            "teamName":"Green Bay Packers",
+            "teamAlias":"GB"
+        },
+        {
+            "teamName":"Minnesota Vikings",
+            "teamAlias":"MIN"
+        },
+        {
+            "teamName":"Atlanta Falcons",
+            "teamAlias":"ATL"
+        },
+        {
+            "teamName":"Carolina Panthers",
+            "teamAlias":"CAR"
+        },
+        {
+            "teamName":"New Orleans Saints",
+            "teamAlias":"NO"
+        },
+        {
+            "teamName":"Tampa Bay Buccaneers",
+            "teamAlias":"TB"
+        },
+        {
+            "teamName":"Arizona Cardinals",
+            "teamAlias":"ARI"
+        },
+        {
+            "teamName":"St. Louis Rams",
+            "teamAlias":"STL"
+        },
+        {
+            "teamName":"San Francisco 49ers",
+            "teamAlias":"SF"
+        },
+        {
+            "teamName":"Seattle Seahawks",
+            "teamAlias":"SEA"
+        }
+    ]
 }
