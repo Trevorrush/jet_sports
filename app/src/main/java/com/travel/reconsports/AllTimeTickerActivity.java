@@ -42,22 +42,22 @@ public class AllTimeTickerActivity extends CarouselActivity {
     public int getLayoutId() {
         return R.layout.carousel_host;
     }
+//
+//    static class ImageCarouselItem extends StandardCarouselItem {
+//        public ImageCarouselItem(String title, Integer icon) {
+//            super(title, icon);
+//        }
+//        @Override
+//        public int getLayoutId() {
+//            return R.layout.carousel_item_title_icon_column;
+//        }
+//    }
 
-    static class ImageCarouselItem extends StandardCarouselItem {
-        public ImageCarouselItem(String title, Integer icon) {
-            super(title, icon);
-        }
-        @Override
-        public int getLayoutId() {
-            return R.layout.carousel_item_title_icon_column;
-        }
-    }
-
-    private CarouselItem[] getGameEntries(){
+    private Carousel_Score_Item[] getGameEntries(){
         int num_of_games = getNumberOfGames();
-        CarouselItem[] myCarouseItemArray = new CarouselItem[num_of_games];
+        Carousel_Score_Item[] myCarouseItemArray = new Carousel_Score_Item[num_of_games];
         for (int i = 0; i < gameArray.length(); i++) {
-            myCarouseItemArray[i] = new ImageCarouselItem("HELL", R.drawable.carousel_icon_running);
+            myCarouseItemArray[i] = new Carousel_Score_Item("Hello", "Hello2");
         }
 
         return myCarouseItemArray;
@@ -95,7 +95,6 @@ public class AllTimeTickerActivity extends CarouselActivity {
 
                 // Getting JSON Array node
                 gameArray = jsonObj.getJSONArray(TAG_GAMES);
-
                 return gameArray.length();
 
             } catch (JSONException e) {
