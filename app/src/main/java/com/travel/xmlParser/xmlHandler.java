@@ -23,6 +23,11 @@ public class xmlHandler {
     private String ticker_entry_value;
     private String visiting_team_name_value;
 
+    public xmlHandler(String source_xml_String){
+        //  Setup the xmlString
+        xmlString = source_xml_String;
+    }
+
     public String getTicker_entry_value(){
         return ticker_entry_value;
     }
@@ -95,5 +100,5 @@ public class xmlHandler {
         });
         thread.start();
     }
-}
+
 }

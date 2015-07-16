@@ -84,8 +84,11 @@ public class AllTimeTickerActivity extends CarouselActivity {
             jsonResponseValueString= extras.getString(jsonResponseKeyString);
             Log.d(TAG, jsonResponseValueString);
             Log.d(TAG, "number = " + getNumberOfGames());
+
+            //  Setup the xml Handler
+            mXmlHandler = new xmlHandler(jsonResponseValueString);
         }
-        
+
         if (jsonResponseValueString != null) {
             try {
                 JSONObject jsonObj = new JSONObject(jsonResponseValueString);
